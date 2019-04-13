@@ -30,6 +30,7 @@ public class MovieDataServiceImpl implements MovieDataService {
 
 	@Override
 	public MoviesResponse fetchAll() {
+
 		MoviesResponse movieJsonArray = new MoviesResponse();
 		try {
 			JSONArray jsonArray = readJsonFromUrl(MOVIE_DATA_URL);
@@ -66,7 +67,8 @@ public class MovieDataServiceImpl implements MovieDataService {
 		return movieJsonArray;
 	}
 
-	public static JSONArray readJsonFromUrl(String url) throws IOException, JSONException {
+	@Override
+	public JSONArray readJsonFromUrl(String url) throws IOException, JSONException {
 		InputStream is = new URL(url).openStream();
 		try {
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
@@ -77,7 +79,8 @@ public class MovieDataServiceImpl implements MovieDataService {
 		}
 	}
 
-	private static String readAll(Reader rd) throws IOException {
+	@Override
+	public String readAll(Reader rd) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		int cp;
 		while ((cp = rd.read()) != -1) {
