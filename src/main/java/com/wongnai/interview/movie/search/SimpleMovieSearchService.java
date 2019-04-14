@@ -30,10 +30,16 @@ public class SimpleMovieSearchService implements MovieSearchService {
         MoviesResponse allMovies = movieDataService.fetchAll();
         List<Movie> result = new ArrayList<>();
         for (MovieData element : allMovies) {
-            Boolean found = Arrays.asList(element.getTitle().split(" ")).contains(queryText);
-            if(found){
-                Movie movie = new Movie(element.getTitle());
-                result.add(movie);
+            String [] words = element.getTitle().split(" ", 10);
+            for (String word : words) {
+                if (word.toLowerCase().equals(queryText.toLowerCase())) {
+                    Movie movie = new Movie(element.getTitle());
+                    if(element.getCast().size() != 0)
+                        movie.setActors(element.getCast());
+                    result.add(movie);
+                    break;
+                }
+
             }
         }
 
