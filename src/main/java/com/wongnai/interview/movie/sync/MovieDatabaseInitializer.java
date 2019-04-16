@@ -13,5 +13,6 @@ public class MovieDatabaseInitializer implements InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		//run sync while server is starting
 		movieDataSynchronizer.forceSync();
+		System.out.println("DemoBean was initialized");
 	}
 }
