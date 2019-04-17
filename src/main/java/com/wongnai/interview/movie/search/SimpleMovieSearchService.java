@@ -39,7 +39,6 @@ public class SimpleMovieSearchService implements MovieSearchService {
                     result.add(movie);
                     break;
                 }
-
             }
         }
 

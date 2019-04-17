@@ -30,12 +30,10 @@ public class MovieDataServiceImpl implements MovieDataService {
 
 	@Override
 	public MoviesResponse fetchAll() {
-
 		MoviesResponse movieJsonArray = new MoviesResponse();
 		try {
 			JSONArray jsonArray = readJsonFromUrl(MOVIE_DATA_URL);
-			for (int i = 0; i < jsonArray.length(); i++)
-			{
+			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject subJsonObj = jsonArray.getJSONObject(i);
 				MovieData movieData = new MovieData();
 				movieData.setTitle(subJsonObj.getString("title"));
@@ -58,29 +56,22 @@ public class MovieDataServiceImpl implements MovieDataService {
 				}
 				movieJsonArray.add(movieData);
 			}
-		} catch (JSONException e) {
+		} catch (JSONException | IOException e) {
 			e.printStackTrace();
 			return null;
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		return movieJsonArray;
 	}
 
-	@Override
-	public JSONArray readJsonFromUrl(String url) throws IOException, JSONException {
-		InputStream is = new URL(url).openStream();
-		try {
+	private JSONArray readJsonFromUrl(String url) throws IOException, JSONException {
+		try (InputStream is = new URL(url).openStream()) {
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
 			String jsonText = readAll(rd);
-			return  new JSONArray(jsonText);
-		} finally {
-			is.close();
+			return new JSONArray(jsonText);
 		}
 	}
 
-	@Override
-	public String readAll(Reader rd) throws IOException {
+	private String readAll(Reader rd) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		int cp;
 		while ((cp = rd.read()) != -1) {

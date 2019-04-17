@@ -1,6 +1,6 @@
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\search\SimpleMovieSearchServiceIntegrationTest.java
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\MoviesControllerIntegrationTest.java
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\search\DatabaseMovieSearchServiceIntegrationTest.java
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\MovieTestHelper.java
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\external\MovieDataServiceImplIntegrationTest.java
-D:\MyWork\Wongnai\java-homework\src\test\java\com\wongnai\interview\movie\search\InvertedIndexMovieSearchServiceIntegrationTest.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\external\MovieDataServiceImplIntegrationTest.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\search\DatabaseMovieSearchServiceIntegrationTest.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\search\InvertedIndexMovieSearchServiceIntegrationTest.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\MovieTestHelper.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\search\SimpleMovieSearchServiceIntegrationTest.java
+D:\MyWork\java-homework\src\test\java\com\wongnai\interview\movie\MoviesControllerIntegrationTest.java

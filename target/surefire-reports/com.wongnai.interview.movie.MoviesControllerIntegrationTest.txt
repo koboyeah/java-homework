@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.wongnai.interview.movie.MoviesControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 116.479 s <<< FAILURE! - in com.wongnai.interview.movie.MoviesControllerIntegrationTest
+testSearchWithRestApi(com.wongnai.interview.movie.MoviesControllerIntegrationTest)  Time elapsed: 0.765 s  <<< FAILURE!
+java.lang.AssertionError: 
+JSON path "$.length()"
+Expected: <7>
+     but: was <14>
+	at com.wongnai.interview.movie.MoviesControllerIntegrationTest.testSearchWithRestApi(MoviesControllerIntegrationTest.java:30)
+
